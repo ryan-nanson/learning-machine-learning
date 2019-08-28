@@ -48,6 +48,7 @@ while i < 10:
 	print(i)
 	i += 1
 
+	
 ## Data Structures
 
 # Tuple
@@ -73,10 +74,84 @@ for key in mydict.keys():
 	print(mydict[key])
 
 ## Functions
-# Sum function
 def mysum(x, y):
 	return x + y
-
-# Test sum function
+# Test Function
 print(mysum(1, 3))
 
+
+## NumPy
+
+# Create Array
+import numpy
+mylist = [1, 2, 3]
+myarray = numpy.array(mylist)
+print(myarray)
+print(myarray.shape)
+
+# Access Data
+import numpy
+mylist = [[1, 2, 3], [3, 4, 5]]
+myarray = numpy.array(mylist)
+print(myarray)
+print(myarray.shape)
+print("First row: %s" % myarray[0])
+print("Last row: %s" % myarray[-1])
+print("Specific row and col: %s" % myarray[0, 2])
+print("Whole col: %s" % myarray[:, 2])
+
+# Arithmetic
+import numpy
+myarray1 = numpy.array([2, 2, 2])
+myarray2 = numpy.array([3, 3, 3])
+print("Addition: %s" % (myarray1 + myarray2))
+print("Multiplication: %s" % (myarray1 * myarray2))
+
+
+## Matplotlib
+
+# Basic Line Plot
+import matplotlib.pyplot as plt
+import numpy
+myarray = numpy.array([1, 2, 3])
+plt.plot(myarray)
+plt.xlabel('test x axis')
+plt.ylabel('test y axis')
+plt.show()
+
+# Basic Scatter Plot
+import matplotlib.pyplot as plt
+import numpy
+x = numpy.array([1, 2, 3])
+y = numpy.array([2, 4, 6])
+plt.scatter(x,y)
+plt.xlabel('test x axis')
+plt.ylabel('test y axis')
+plt.show()
+
+
+## Pandas
+
+# Series
+import numpy
+import pandas
+myarray = numpy.array([1, 2, 3])
+rownames = ['a', 'b', 'c']
+myseries = pandas.Series(myarray, index=rownames)
+print(myseries)
+
+# Access Data
+print(myseries[0])
+print(myseries['a'])
+
+# Dataframe
+import numpy
+import pandas
+myarray = numpy.array([[1, 2, 3], [4, 5, 6]])
+rownames = ['a', 'b']
+colnames = ['one', 'two', 'three']
+mydataframe = pandas.DataFrame(myarray, index=rownames, columns=colnames)
+print(mydataframe)
+
+print("one column: %s" % mydataframe['one'])
+print("one column: %s" % mydataframe.one)
