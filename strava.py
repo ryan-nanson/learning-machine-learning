@@ -13,10 +13,10 @@ import matplotlib.pyplot as plt
 
 url = 'https://www.strava.com/api/v3'
 
-athletePath = '/athletes/2215683'
-activityPath = '/activities/2699762220'
+athletePath = '/athletes/{id}'
+activityPath = '/activities/{id}'
 
-header = {'Authorization': 'Bearer c2055b45de149724fe658641626726e622fe05af'}
+header = {'Authorization': 'Bearer access_token'}
 
 athleteData = r.get(url + athletePath, headers=header).json()
 statsData = r.get(url + athletePath + '/stats', headers=header).json()
