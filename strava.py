@@ -25,6 +25,9 @@ print(f"In total you have run {statsData['all_run_totals']['count']} times cover
 
 runs = statsData['all_run_totals']
 rides = statsData['all_ride_totals']
+      
+#runs = {'count': 148, 'distance': 1001410, 'moving_time': 335878, 'elapsed_time': 363712, 'elevation_gain': 7461}
+#rides = {'count': 51, 'distance': 1465410, 'moving_time': 440598, 'elapsed_time': 632332, 'elevation_gain': 15512}
 
 plt.style.use('ggplot')
 
