@@ -21,8 +21,9 @@ header = {'Authorization': 'Bearer access_token'}
 athleteData = r.get(url + athletePath, headers=header).json()
 statsData = r.get(url + athletePath + '/stats', headers=header).json()
 print(f"Hello {athleteData['firstname']} {athleteData['lastname']},")
-print(f"In total you have run {statsData['all_run_totals']['count']} times covering {statsData['all_run_totals']['distance']}km")
-
+print(f"In total you have run {statsData['all_run_totals']['count']} times covering {statsData['all_run_totals']['distance']}m")
+print(f"In total you have rode {statsData['all_ride_totals']['count']} times covering {statsData['all_run_totals']['distance']}m")
+      
 runs = statsData['all_run_totals']
 rides = statsData['all_ride_totals']
       
