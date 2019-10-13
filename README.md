@@ -7,3 +7,4 @@ A place to store all my machine learning snippets
 - Python "Cheat Sheet"
 - Logistic Regression [Tutorial credit](https://beckernick.github.io/logistic-regression-from-scratch/)
 - Strava API [swagger](https://developers.strava.com/docs/reference/)
+- Text Generation - Harry Potter Spells - [Textgenrnn](https://github.com/minimaxir/textgenrnn)
