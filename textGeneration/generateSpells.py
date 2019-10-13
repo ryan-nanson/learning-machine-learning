@@ -33,4 +33,6 @@ generated_spells = spellgen.generate(5, return_as_list=True)
 # Generate Spell Effects
 effectgen = textgenrnn()
 effectgen.train_from_file('effects.txt', num_epochs=1)
-generated_effects = effectgen.generate(5, return_as_list=True)
+generated_effects = []
+for spell in generated_spells:
+    generated_effects.append(effectgen.generate(3, return_as_list=True, prefix=(spell)))
