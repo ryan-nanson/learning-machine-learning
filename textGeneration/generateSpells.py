@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Ryan Nanson
-
 Generate Harry Potter Spells.
+https://github.com/ryan-nanson/learning-machine-learning/tree/master/textGeneration
 """
 from textgenrnn import textgenrnn
 import csv
@@ -14,25 +14,15 @@ with open('Spells.csv') as csvfile:
     next(spellsreader, None)  # skip the headers
     for row in spellsreader:
         if not (row[1] == 'Unknown' or row[1] == ''):
-            print(row[1])
-            spells.append(row[1])
-            effects.append(row[3])
+            spell = "%s: %s" % (row[1],row[3])
+            print(spell)
+            spells.append(spell)
 
 # Write to single line text files ready for input to textgenrnn
 with open("spells.txt", "w") as output:
     output.write('\n'.join(spells))
-    
-with open("effects.txt", "w") as output:
-    output.write('\n'.join(effects))
 
-# Generate Spells
+# Generate Spells and Effects
 spellgen = textgenrnn()
 spellgen.train_from_file('spells.txt', num_epochs=1)
-generated_spells = spellgen.generate(5, return_as_list=True)
-
-# Generate Spell Effects
-effectgen = textgenrnn()
-effectgen.train_from_file('effects.txt', num_epochs=1)
-generated_effects = []
-for spell in generated_spells:
-    generated_effects.append(effectgen.generate(3, return_as_list=True, prefix=(spell)))
+generated_spells = spellgen.generate(50, temperature=0.35, return_as_list=True)
