@@ -9,7 +9,6 @@ import csv
 # Read Spells.csv and create lists
 with open('Spells.csv') as csvfile:
     spells = []
-    effects = []
     spellsreader = csv.reader(csvfile, delimiter=';')
     next(spellsreader, None)  # skip the headers
     for row in spellsreader:
